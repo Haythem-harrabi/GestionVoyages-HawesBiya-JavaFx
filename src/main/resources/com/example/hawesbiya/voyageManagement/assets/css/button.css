@@ -1,0 +1,28 @@
+.button {
+    -fx-background-color: #9a76b0;
+    -fx-text-fill: white;
+    -fx-cursor: default;
+    -fx-opacity: 0.88;
+    -fx-font-size: 14px;
+    -fx-transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: #6d3d97;
+    -fx-cursor: hand;
+    -fx-opacity: 1;
+    -fx-font-weight: bold;}
+.cancelbutton {
+    -fx-background-color: #f35b5b;
+    -fx-text-fill: white;
+    -fx-cursor: default;
+    -fx-opacity: 0.88;
+    -fx-font-size: 14px;
+    -fx-transition: 0.2s ease-in-out;
+}
+
+.cancelbutton:hover {
+    -fx-background-color: red;
+    -fx-cursor: hand;
+    -fx-opacity: 1;
+    -fx-font-weight: bold;}

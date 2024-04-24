@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="containerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="183.0" prefWidth="327.0" stylesheets="@assets/css/Card.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hawesbiya.voyageManagement.controller.MoyenController">
+    <children>
+        <Pane fx:id="IconsPane" layoutX="261.0" layoutY="10.0" prefHeight="40.0" prefWidth="65.0" />
+        <HBox alignment="CENTER" layoutY="94.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="89.0" prefWidth="327.0" styleClass="gray-hbox" stylesheets="@assets/css/Card.css">
+            <children>
+                <VBox alignment="BOTTOM_LEFT" prefHeight="79.0" prefWidth="182.0">
+                    <children>
+                        <Label fx:id="category" alignment="CENTER" prefHeight="40.0" prefWidth="143.0" styleClass="info" text="Category">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="type" alignment="CENTER" prefHeight="34.0" prefWidth="170.0" styleClass="destination" text="Moyen">
+                            <font>
+                                <Font size="30.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="10.0" />
+                    </HBox.margin>
+                </VBox>
+                <Pane prefHeight="177.0" prefWidth="46.0" />
+                <VBox alignment="BOTTOM_CENTER" prefHeight="79.0" prefWidth="154.0">
+                    <children>
+                        <Label fx:id="model" alignment="CENTER" prefHeight="34.0" prefWidth="138.0" styleClass="info" text="model">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <HBox.margin>
+                        <Insets bottom="10.0" />
+                    </HBox.margin>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</Pane>

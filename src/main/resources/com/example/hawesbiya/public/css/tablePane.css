@@ -1,0 +1,37 @@
+
+/* Style pour rendre l'onglet transparent lorsqu'il est non sélectionné */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-opacity: 0;
+}
+
+/* Style général pour les onglets */
+.tab-pane {
+    -fx-tab-min-width: 90px;
+    -fx-tab-min-height: 30px;
+}
+
+/* Style pour les onglets non sélectionnés */
+.tab {
+    -fx-background-insets: 0 0 0 0, 0, 0;
+    -fx-background-color: transparent; /* Fond transparent */
+}
+
+/* Style pour les onglets sélectionnés */
+.tab:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #6F5CC2;
+    -fx-border-color: #6F5CC2;
+    -fx-border-width: 0px 0px 2px 0px;
+}
+
+/* Style pour le texte des onglets */
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #A5A9B4; /* Couleur du texte non sélectionné */
+}
+
+/* Style pour le texte des onglets sélectionnés */
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: #6F5CC2; /* Couleur du texte sélectionné */
+}

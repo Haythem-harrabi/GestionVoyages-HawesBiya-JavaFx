@@ -1,0 +1,14 @@
+.gray-hbox {
+    -fx-background-color: rgba(169, 169, 169, 0.5); /* Gray color with 50% opacity */
+    -fx-max-width: 327;
+}
+
+.destination {
+
+    -fx-font-family:Algerian ;
+    -fx-font-size: 30 ;
+}
+.info{
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 24;
+}
