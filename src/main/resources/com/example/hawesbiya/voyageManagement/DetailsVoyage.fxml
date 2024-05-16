@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="562.0" prefWidth="1000.0" stylesheets="@assets/css/Details.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hawesbiya.voyageManagement.controller.DetailsVoyage">
+
+
+    <children>
+        <BorderPane prefHeight="562.0" prefWidth="1000.0">
+            <left>
+                <VBox prefHeight="562.0" prefWidth="225.0" style="-fx-background-color: #6f5cc2;" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="user cord" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/user-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding></Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="voyage " textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/voyage-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="58.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="reservation" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="28.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/reservation-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="106.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="accomodation " textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/residence-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="events" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/event-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="202.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="guides" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/guide-icon.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="250.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="225.0" stylesheets="@../public/css/button.css" text="activity" textFill="WHITE">
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../public/images/activity.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                            <padding>
+                                <Insets left="30.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </VBox>
+            </left>
+            <top>
+                <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="1000.0" style="-fx-background-color: #52438F;" BorderPane.alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="56.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../public/images/logo.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="46.0" prefWidth="331.0" text="  HAWESBIYA - Home" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Bold" size="23.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                            <HBox.margin>
+                                <Insets left="500.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@../public/images/logout-icon.png" />
+                            </image></ImageView>
+                        <Label text="log out" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="30.0" />
+                    </padding></HBox>
+            </top>
+            <center>
+                <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../public/css/tablePane.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+                    <tabs>
+                        <Tab text="Our trips">
+                            <content>
+                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                              <HBox alignment="CENTER" layoutY="4.0" prefHeight="51.0" prefWidth="775.0">
+                                 <children>
+                                              <Label fx:id="depart" alignment="CENTER" contentDisplay="CENTER" styleClass="titlehead" text="DEPARTURE">
+                                       <HBox.margin>
+                                          <Insets right="20.0" />
+                                       </HBox.margin></Label>
+                                    <ImageView fitHeight="49.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@assets/images/arrow.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="destination" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="40.0" styleClass="titlehead" text="DESTINATION">
+                                       <HBox.margin>
+                                          <Insets left="20.0" />
+                                       </HBox.margin></Label>
+                                 </children>
+                              </HBox>
+                                        <ScrollPane layoutX="-1.0" layoutY="52.0" prefHeight="405.0" prefWidth="779.0">
+                                 <content>
+                                    <VBox prefHeight="402.0" prefWidth="775.0">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="225.0" prefWidth="775.0">
+                                             <children>
+                                                <ImageView fx:id="VoyageImage" fitHeight="230.0" fitWidth="503.0" pickOnBounds="true" preserveRatio="true" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="239.0" prefHeight="47.0" prefWidth="775.0" styleClass="gray-hbox">
+                                             <children>
+                                                <Label text="Description ">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets bottom="11.0" left="10.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="description" layoutX="235.0" layoutY="10.0" styleClass="info" text="Arr Date">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="36.0" prefWidth="775.0">
+                                             <children>
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="454.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/date icon.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label styleClass="labelsinfo" text="Departure Date : ">
+                                                   <HBox.margin>
+                                                      <Insets left="3.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="depdate" styleClass="info" text="Dep Date" />
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/date icon.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="25.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label layoutX="144.0" layoutY="10.0" styleClass="labelsinfo" text="Arrival Date : ">
+                                                   <HBox.margin>
+                                                      <Insets left="3.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Label fx:id="arrdate" layoutX="235.0" layoutY="10.0" styleClass="info" text="Arr Date" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="239.0" prefHeight="36.0" prefWidth="775.0">
+                                             <children>
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/dollar.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label fx:id="prix" styleClass="info" text="Price">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/car-seat.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="places" styleClass="info" text="Available seats">
+                                                   <HBox.margin>
+                                                      <Insets left="2.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="454.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/transportation.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="transport" styleClass="info" text="transportation">
+                                                   <HBox.margin>
+                                                      <Insets left="3.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@assets/images/accomodation.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label fx:id="hebergement" layoutX="144.0" layoutY="10.0" styleClass="info" text="accomodation">
+                                                   <HBox.margin>
+                                                      <Insets left="3.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="10.0" layoutY="275.0" prefHeight="36.0" prefWidth="775.0">
+                                             <children>
+                                                <Button fx:id="book" mnemonicParsing="false" onAction="#Reserver" text="Book Now !">
+                                                   <HBox.margin>
+                                                      <Insets top="5.0" />
+                                                   </HBox.margin>
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor></Button>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="7.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                                        </ScrollPane>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#GoBack" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@assets/images/back-arrow.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                                    </children>
+                                </Pane>
+                            </content></Tab>
+                        <Tab text="exemple 2" />
+                    </tabs>
+                </TabPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

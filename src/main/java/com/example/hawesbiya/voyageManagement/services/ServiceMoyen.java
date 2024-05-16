@@ -1,10 +1,12 @@
 package com.example.hawesbiya.voyageManagement.services;
 
+import com.example.hawesbiya.voyageManagement.entities.Hebergement;
 import com.example.hawesbiya.voyageManagement.entities.MoyenTransport ;
 import com.example.hawesbiya.voyageManagement.entities.Voyage;
 import com.example.hawesbiya.utils.MyDB;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,4 +94,28 @@ public class ServiceMoyen implements services.IService<MoyenTransport> {
     }
 
 
+    public List<MoyenTransport> filterMoyens(String typesearch, String model) throws SQLException {
+        List<MoyenTransport> moy = new ArrayList<>();
+        String query="select * from moyen_transport WHERE 1";
+
+        if (typesearch != null && ! typesearch.isEmpty()  ){
+            query+=" AND `type_moyen` ='"+typesearch+"'";
+        }
+        if (model!=null && ! model.isEmpty() ){
+            query+=" AND `id_modele` LIKE '"+model+"%'";
+        }
+
+        System.out.println(query);
+        ste = con.createStatement();
+        ResultSet res =ste.executeQuery(query);
+        while (res.next()){
+            int id = res.getInt(1);
+            String categorie = res.getString(2);
+            String type = res.getString(3);
+            String modele = res.getString(4);
+            MoyenTransport m = new MoyenTransport(id,categorie,type,modele);
+            moy.add(m);
+        }
+        return moy;
+    }
 }

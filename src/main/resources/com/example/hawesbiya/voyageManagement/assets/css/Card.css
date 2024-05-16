@@ -1,5 +1,5 @@
 .gray-hbox {
-    -fx-background-color: rgba(169, 169, 169, 0.5); /* Gray color with 50% opacity */
+    -fx-background-color: rgba(164, 164, 164, 0.5); /* Gray color with 50% opacity */
     -fx-max-width: 327;
 }
 
@@ -12,3 +12,15 @@
     -fx-font-family: "Times New Roman";
     -fx-font-size: 24;
 }
+
+
+
+.home-info{
+    -fx-font-family: "Times New Roman";
+    -fx-font-size: 21;
+    -fx-font-weight: bold;
+}
+
+
+
+

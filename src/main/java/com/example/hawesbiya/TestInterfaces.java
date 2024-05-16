@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import com.example.hawesbiya.voyageManagement.controller.AddVoyageController;
 
+import java.util.Locale;
+
 public class TestInterfaces extends Application {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class TestInterfaces extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        Locale.setDefault(Locale.ENGLISH);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("voyageManagement/VoyagesAdmin.fxml"));
         Parent root = fxmlLoader.load();
         primaryStage.setTitle("HawesBiya App");

@@ -25,8 +25,7 @@ import java.util.regex.Pattern;
 
 public class AddMoyenController implements Initializable {
 
-    @FXML
-    private ComboBox<String> Categorycomb;
+
 
     @FXML
     private ComboBox<String> Typecomb;
@@ -46,7 +45,6 @@ public class AddMoyenController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tabPane.getSelectionModel().select(1);
-        Categorycomb.setItems(FXCollections.observableArrayList("Air","Land"));
         Typecomb.setItems(FXCollections.observableArrayList("Plane","Bus"));
     }
     @FXML
@@ -69,7 +67,7 @@ public class AddMoyenController implements Initializable {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/hawesbiya/voyageManagement/VoyagesAdmin.fxml"));
             Parent root = loader.load();
-            this.Categorycomb.getScene().setRoot(root);
+            this.Typecomb.getScene().setRoot(root);
             VoyagesAdmin VoyageAdminController= loader.getController();
             VoyageAdminController.loadTravels();
         } catch (IOException ex) {
@@ -80,22 +78,18 @@ public class AddMoyenController implements Initializable {
 
     @FXML
     void TakeAction(MouseEvent event) {
-        String cat=Categorycomb.getValue();
+
         String type= Typecomb.getValue();
         String model=modele.getText();
-        if (cat.isEmpty()||type.isEmpty()||model.isEmpty()) {
+
+        if (type.isEmpty()||model.isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
 
-        } else if ((type=="Bus" && cat=="Air") || (type=="Plane" && cat=="Land") ) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Category and type fields are not compatible !");
-            alert.showAndWait();
-        } else if (! ModelisValid()) {
+        }  else if (! ModelisValid()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             if (Typecomb.getValue()=="Bus"){
@@ -113,7 +107,7 @@ public class AddMoyenController implements Initializable {
     }
 
     private void cleanMoyens() {
-        Categorycomb.setValue(null);
+
         Typecomb.setValue(null);
         modele.setText(null);
     }
@@ -122,7 +116,14 @@ public class AddMoyenController implements Initializable {
         try {
 
             ServiceMoyen sv = new ServiceMoyen();
-            MoyenTransport m = new MoyenTransport(Categorycomb.getValue(),Typecomb.getValue(),modele.getText());
+            String cat=null;
+            if (Typecomb.getValue()=="Bus"){
+                cat="Land";
+            }
+            else {
+                cat="Air";
+            }
+            MoyenTransport m = new MoyenTransport(cat,Typecomb.getValue(),modele.getText());
             if (sv.ExistMoyen(m)){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText(null);

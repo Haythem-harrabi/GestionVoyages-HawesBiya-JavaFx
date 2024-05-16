@@ -99,7 +99,7 @@ public class ServiceVoyage implements services.IService<Voyage> {
 
 
     public boolean ExistVoyage(Voyage v) throws SQLException {
-        String req = "SELECT * FROM voyage WHERE depart=? AND destination=? AND date_dep=? AND date_arr=? AND prix=? AND nombre_place_dispo=? AND moyen_transport_id=? AND hebergement_id=? AND description=?";
+        String req = "SELECT * FROM voyage WHERE depart=? AND destination=? AND date_dep=? AND date_arr=? AND prix=? AND nombre_place_dispo=? AND moyen_transport_id=? AND hebergement_id=? ";
         PreparedStatement ps = con.prepareStatement(req);
         ps.setString(1,v.getDepart());
         ps.setString(2,v.getDestination());
@@ -109,9 +109,125 @@ public class ServiceVoyage implements services.IService<Voyage> {
         ps.setInt(6,v.getNombrePlaceDispo());
         ps.setInt(7,v.getMoyenTransport().getId());
         ps.setInt(8,v.getHebergement().getId());
-        ps.setString(9, v.getDescription());
+
         ResultSet res = ps.executeQuery();
         return res.next();
+    }
+
+
+    public List<Voyage> FilterVoyages(String dep, String des, LocalDate datedep, String pr) throws SQLException {
+
+        List<Voyage> voy = new ArrayList<>();
+        String query="select * from voyage WHERE 1";
+
+        if (dep!=null && ! dep.isEmpty() ){
+            query+=" AND `depart` LIKE '"+dep+"%'";
+        }
+        if (des!=null && ! des.isEmpty() ){
+            query+=" AND `destination` LIKE '"+des+"%'";
+        }
+        if (datedep !=null ){
+            query+=" AND `date_dep`='"+datedep+"'";
+        }
+        if (pr!=null && ! pr.isEmpty() ){
+            query+=" AND `prix` <='"+pr+"'";
+        }
+        System.out.println(query);
+        ste = con.createStatement();
+        ResultSet res =ste.executeQuery(query);
+        while (res.next()){
+            int id=res.getInt(1);
+            String depart =res.getString(2);
+            String destination =res.getString(3);
+            LocalDate dateDep= res.getDate(4).toLocalDate();
+            LocalDate dateArr= res.getDate(5).toLocalDate();
+            Float prix=res.getFloat(8);
+            int nbrPlaces=res.getInt(9);
+            int moyenTransportid=res.getInt(10);
+            int heberegement=res.getInt(11);
+            ServiceMoyen sm = new ServiceMoyen();
+            MoyenTransport moyen= sm.getMoyenById(moyenTransportid);
+
+            String desc = res.getString(12);
+
+            //JUST FOR TESTING
+            Hebergement h=new Hebergement(heberegement);
+
+            Voyage v = new Voyage(id,depart,destination,dateDep,dateArr,prix,nbrPlaces,moyen,h,desc);
+            voy.add(v);
+        }
+        return voy;
+    }
+
+
+
+    public Voyage getVoyageById(int id) throws SQLException {
+        Voyage voyage = null;
+        String req = "SELECT * FROM voyage WHERE id=?";
+        PreparedStatement ps = con.prepareStatement(req);
+        ps.setInt(1, id);
+        ResultSet res = ps.executeQuery();
+        while (res.next()) {
+            String depart=res.getString(2);
+            String destination=res.getString(3);
+            LocalDate datedep= res.getDate(4).toLocalDate();
+            LocalDate dateArr= res.getDate(5).toLocalDate();
+            Float prix=res.getFloat(8);
+            int nbrPlaces=res.getInt(9);
+            int moyenTransportid=res.getInt(10);
+            int heberegement=res.getInt(11);
+            ServiceMoyen sm = new ServiceMoyen();
+            MoyenTransport moyen= sm.getMoyenById(moyenTransportid);
+
+            String desc = res.getString(12);
+
+            //JUST FOR TESTING
+            Hebergement h=new Hebergement(heberegement);
+
+            voyage = new Voyage(id,depart,destination,datedep,dateArr,prix,nbrPlaces,moyen,h,desc);
+
+        }
+        return voyage;
+    }
+
+
+    public List<Voyage> FilterVoyages(String dep, String des) throws SQLException {
+
+        List<Voyage> voy = new ArrayList<>();
+        String query="select * from voyage WHERE 1";
+
+        if (! dep.isEmpty() ){
+            query+=" AND `depart` LIKE '"+dep+"%'";
+        }
+        if (! des.isEmpty() ){
+            query+=" AND `destination` LIKE '"+des+"%'";
+        }
+
+        System.out.println(query);
+        ste = con.createStatement();
+        ResultSet res =ste.executeQuery(query);
+        while (res.next()){
+            int id=res.getInt(1);
+            String depart =res.getString(2);
+            String destination =res.getString(3);
+            LocalDate dateDep= res.getDate(4).toLocalDate();
+            LocalDate dateArr= res.getDate(5).toLocalDate();
+            Float prix=res.getFloat(8);
+            int nbrPlaces=res.getInt(9);
+            int moyenTransportid=res.getInt(10);
+            int heberegement=res.getInt(11);
+            ServiceMoyen sm = new ServiceMoyen();
+            MoyenTransport moyen= sm.getMoyenById(moyenTransportid);
+
+            String desc = res.getString(12);
+
+            //JUST FOR TESTING
+            Hebergement h=new Hebergement(heberegement);
+
+            Voyage v = new Voyage(id,depart,destination,dateDep,dateArr,prix,nbrPlaces,moyen,h,desc);
+            voy.add(v);
+        }
+        return voy;
     }
 
     }

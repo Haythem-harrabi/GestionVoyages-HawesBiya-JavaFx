@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="containerPane" prefHeight="183.0" prefWidth="327.0" stylesheets="@assets/css/Card.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hawesbiya.voyageManagement.controller.FrontVoyageController">
+
+    <children>
+        <HBox alignment="CENTER" layoutY="94.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="89.0" prefWidth="327.0" styleClass="gray-hbox" stylesheets="@assets/css/Card.css">
+            <children>
+            <VBox prefHeight="89.0" prefWidth="376.0">
+               <children>
+                  <HBox prefHeight="47.0" prefWidth="327.0">
+                     <children>
+                              <Label fx:id="depart" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="127.0" styleClass="destination" text="Dep">
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                              </Label>
+                        <ImageView fitHeight="37.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/images/arrow.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                        </ImageView>
+                              <Label fx:id="name" alignment="CENTER" prefHeight="55.0" prefWidth="157.0" styleClass="destination" text="Dest">
+                                  <font>
+                                      <Font size="30.0" />
+                                  </font>
+                              </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="38.0" prefWidth="327.0">
+                     <children>
+                        <ImageView fitHeight="41.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@assets/images/date%20icon.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="3.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="date" prefHeight="38.0" prefWidth="113.0" styleClass="home-info" text="Label">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                           <opaqueInsets>
+                              <Insets left="5.0" right="5.0" />
+                           </opaqueInsets></Separator>
+                        <Label fx:id="price" prefHeight="38.0" prefWidth="101.0" styleClass="home-info" text="Label">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            </children>
+        </HBox>
+    </children>
+   <cursor>
+      <Cursor fx:constant="HAND" />
+   </cursor>
+</AnchorPane>

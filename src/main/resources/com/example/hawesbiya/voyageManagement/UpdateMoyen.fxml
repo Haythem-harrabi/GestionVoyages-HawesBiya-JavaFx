@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.ScrollPane?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hawesbiya.voyageManagement.controller.UpdateMoyen">
 
     <children>
@@ -148,7 +149,7 @@
                             <content>
                                 <Pane prefHeight="200.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="208.0" layoutY="280.0" text="Model">
+                                        <Label layoutX="207.0" layoutY="218.0" text="Model">
                                             <font>
                                                 <Font name="System Bold" size="14.0" />
                                             </font>
@@ -158,24 +159,37 @@
                                                 <Font name="Arial Bold" size="33.0" />
                                             </font>
                                         </Label>
-                                        <TextField fx:id="modele" layoutX="306.0" layoutY="277.0" />
-                                        <ComboBox fx:id="Categorycomb" layoutX="307.0" layoutY="125.0" prefWidth="150.0" />
-                                        <Label layoutX="200.0" layoutY="127.0" text="Category">
+                                        <TextField fx:id="modele" layoutX="306.0" layoutY="216.0" />
+                                        <ComboBox fx:id="Typecomb" layoutX="305.0" layoutY="132.0" prefWidth="150.0" />
+                                        <Label layoutX="213.0" layoutY="134.0" text="Type">
                                             <font>
                                                 <Font name="System Bold" size="14.0" />
                                             </font>
                                         </Label>
-                                        <ComboBox fx:id="Typecomb" layoutX="307.0" layoutY="206.0" prefWidth="150.0" />
-                                        <Label layoutX="214.0" layoutY="208.0" text="Type">
-                                            <font>
-                                                <Font name="System Bold" size="14.0" />
-                                            </font>
-                                        </Label>
-                                        <Button layoutX="480.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#TakeAction" prefHeight="26.0" prefWidth="95.0" stylesheets="@assets/css/button.css" text="Update" />
-                                        <Button fx:id="cancelbtn" layoutX="203.0" layoutY="366.0" mnemonicParsing="false" onMouseClicked="#CancelAction" prefHeight="26.0" prefWidth="95.0" styleClass="cancelbutton" stylesheets="@assets/css/button.css" text="Cancel" />
+                                        <Button layoutX="432.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#TakeAction" prefHeight="26.0" prefWidth="95.0" stylesheets="@assets/css/button.css" text="Update" />
+                                        <Button fx:id="cancelbtn" layoutX="221.0" layoutY="297.0" mnemonicParsing="false" onMouseClicked="#CancelAction" prefHeight="26.0" prefWidth="95.0" styleClass="cancelbutton" stylesheets="@assets/css/button.css" text="Cancel" />
                                     </children>
                                 </Pane>
                             </content></Tab>
+
+                        <Tab  text="Calendar">
+                            <content>
+                                <Pane fx:id="CalendarPane" prefHeight="200.0" prefWidth="200.0">
+                                    <children>
+                                        <Label alignment="TOP_CENTER" layoutX="268.0" layoutY="27.0" text="Trips Calendar" textAlignment="CENTER" textFill="#5107ff">
+                                            <font>
+                                                <Font name="Arial Bold" size="33.0" />
+                                            </font>
+                                        </Label>
+                                        <ScrollPane layoutY="74.0" prefHeight="382.0" prefWidth="774.0" >
+                                            <content>
+                                                <fx:include source="calendar.fxml" />
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </Pane>
+                            </content>
+                        </Tab>
                     </tabs>
                 </TabPane>
             </center>

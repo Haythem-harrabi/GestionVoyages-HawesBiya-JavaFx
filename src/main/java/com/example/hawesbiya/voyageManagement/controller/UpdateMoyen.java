@@ -18,11 +18,12 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UpdateMoyen implements Initializable {
 
-    @FXML
-    private ComboBox<String> Categorycomb;
+
 
     @FXML
     private ComboBox<String> Typecomb;
@@ -43,7 +44,6 @@ public class UpdateMoyen implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         tabPane.getSelectionModel().select(1);
-        Categorycomb.setItems(FXCollections.observableArrayList("Air","Land"));
         Typecomb.setItems(FXCollections.observableArrayList("Plane","Bus"));
     }
     @FXML
@@ -63,30 +63,31 @@ public class UpdateMoyen implements Initializable {
 
     @FXML
     void TakeAction(MouseEvent event) {
-        String cat=Categorycomb.getValue();
+
         String type= Typecomb.getValue();
         String model=modele.getText();
-        if (cat.isEmpty()||type.isEmpty()||model.isEmpty()) {
+        if (type.isEmpty()||model.isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
 
-        } else if ((type=="Bus" && cat=="Air") || (type=="Plane" && cat=="Land") ) {
+        } else if (! ModelisValid()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("Category and type fields are not compatible !");
+            if (Typecomb.getValue()=="Bus"){
+                alert.setContentText("Invalid model : must be [2-3 digits][3 letters][2-4 digits] !");}
+            else {
+                alert.setContentText("Invalid model : must be [3-4 letters][2-4 digits] !");
+            }
             alert.showAndWait();
+
         }
         else {
 
             Updatemoyen();
-            cleanMoyens();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText(null);
-            alert.setContentText("Transportation updated successfully !");
-            alert.showAndWait();
+
 
 
         }
@@ -110,8 +111,27 @@ public class UpdateMoyen implements Initializable {
         try {
 
             ServiceMoyen sv = new ServiceMoyen();
-            MoyenTransport m = new MoyenTransport(MoyenId,Categorycomb.getValue(),Typecomb.getValue(),modele.getText());
-            sv.update(m);
+            String cat=null;
+            if (Typecomb.getValue()=="Bus"){
+                cat="Land";
+            }
+            else {
+                cat="Air";
+            }
+            MoyenTransport m = new MoyenTransport(MoyenId,cat,Typecomb.getValue(),modele.getText());
+            if (sv.ExistMoyen(m)){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("This transportation already exists");
+                alert.showAndWait();
+            }
+            else{
+                sv.update(m);
+                cleanMoyens();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Transportation updated successfully !");
+                alert.showAndWait();}
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -119,7 +139,6 @@ public class UpdateMoyen implements Initializable {
     }
 
     private void cleanMoyens() {
-        Categorycomb.setValue(null);
         Typecomb.setValue(null);
         modele.setText(null);
     }
@@ -127,11 +146,27 @@ public class UpdateMoyen implements Initializable {
     void setTextField(int id, String cat, String type, String model) {
 
         MoyenId=id;
-        Categorycomb.setValue(cat);
         Typecomb.setValue(type);
         modele.setText(model);
 
 
+    }
+
+    private boolean ModelisValid() {
+        String busRegex = "^\\d{2,3}[A-Za-z]{3}\\d{2,4}$";
+        String PlaneRegex = "^[A-Za-z]{3,4}\\d{2,4}$";
+        Pattern pattern= null;
+        if (Typecomb.getValue()=="Bus"){
+            pattern = Pattern.compile(busRegex);
+        }
+        else {
+            pattern = Pattern.compile(PlaneRegex);
+        }
+        Matcher matcher = pattern.matcher(modele.getText());
+        if(matcher.matches()){
+            return true;
+        }
+        return false;
     }
 
 }

@@ -1,0 +1,35 @@
+.titlehead{
+    -fx-font-family: Algerian;
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+
+}
+
+.labelsinfo{
+    -fx-font-size: 17;
+    -fx-font-weight: bold;
+}
+.info{
+    -fx-font-size: 16;
+    -fx-font-family: "Times New Roman";
+}
+
+.button {
+    -fx-background-color: #9a76b0;
+    -fx-text-fill: white;
+    -fx-cursor: default;
+    -fx-opacity: 0.88;
+    -fx-font-size: 14px;
+    -fx-transition: 0.2s ease-in-out;
+}
+
+.button:hover {
+    -fx-background-color: #6d3d97;
+    -fx-cursor: hand;
+    -fx-opacity: 1;
+    -fx-font-weight: bold;}
+
+.gray-hbox {
+    -fx-background-color: rgba(164, 164, 164, 0.5); /* Gray color with 50% opacity */
+   
+}

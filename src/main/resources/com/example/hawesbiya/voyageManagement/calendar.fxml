@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.calendarfx.view.YearMonthView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import com.calendarfx.view.CalendarView?>
+
+<?import javafx.scene.control.Button?>
+<?import java.net.URL?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hawesbiya.voyageManagement.controller.CalendarController">
+   <stylesheets>
+      <URL value="@assets/css/Calendar.css" />
+   </stylesheets>
+   <children>
+      <CalendarView fx:id="calendarView"/>
+   </children>
+</AnchorPane>
